@@ -17,12 +17,12 @@ export class StoreService {
   }
   private readonly _paymentState: BehaviorSubject<StateStore> = new BehaviorSubject<StateStore>(this.initialState);
 
-  // the getter will return the last value emitted in _paymentFormState subject
+  // the getter will return the last value emitted in _paymentState subject
   private get paymentState(): StateStore {
     return this._paymentState.getValue();
   }
 
-  // assigning a value to this.paymentFormState will push it onto the observable 
+  // assigning a value to this.paymentState will push it onto the observable 
   // and down to all of its subscribers 
   private set paymentState(value: StateStore) {
     this._paymentState.next(value);
@@ -36,6 +36,7 @@ export class StoreService {
     this.paymentState = state;
   }
 
+  // need to test individual get functions
   getMembership(): Observable<string | void> {
     const state = this.paymentState.membership;
     return of(state);
