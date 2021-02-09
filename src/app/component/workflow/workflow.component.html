@@ -1,0 +1,19 @@
+<div class="container" style="margin-top:10px;">
+  <app-first></app-first>
+  <app-second></app-second>
+  <app-third></app-third>
+  <app-summary></app-summary>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row" *ngIf="formErrors.length > 0">
+      <div class="alert alert-danger" style="margin:2%;width:100%;">
+        There are errors in the following sections:
+        <ul>
+          <ng-container *ngFor="let error of formErrors">
+            <li style="list-style-type:none">{{ error }}</li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="formErrors.length > 0">Pay Me Now</button>
+  </form>
+</div>

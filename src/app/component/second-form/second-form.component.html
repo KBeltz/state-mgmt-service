@@ -1,0 +1,38 @@
+<div class="card-header" style="background-color: white;padding:3px">
+  <h4>Promo</h4>
+</div>
+<div id="secondForm">
+  <form [formGroup]="form">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-xs-6">
+          <input type="radio" formControlName="promo" value="0" (change)="setPromo()"/>
+        </div>
+        <div class="col-xs-6">
+          <label for="firstInput"> First Promo: </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <input type="radio" formControlName="promo" value="1" (change)="setPromo()"/>
+        </div>
+        <div class="col-xs-6">
+          <label for="secondInput"> Second Promo: </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <input type="radio" formControlName="promo" value="2" (change)="setPromo()"/>
+        </div>
+        <div class="col-xs-6">
+          <label for="thirdInput"> Third Promo: </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          Membership value: {{ state.membership }}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

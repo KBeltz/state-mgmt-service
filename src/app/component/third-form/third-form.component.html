@@ -1,0 +1,24 @@
+<div class="card-header" style="background-color: white;padding:3px">
+  <h4>Code</h4>
+</div>
+<div id="thirdForm">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <label for="firstInput">First Input: </label>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="input-group">
+            <input type="text" class="form-control" formControlName="code" value="0" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit">
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
